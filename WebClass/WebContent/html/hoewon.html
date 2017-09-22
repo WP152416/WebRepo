@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>sign up</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+<div class="alert alert-light" role="alert" >
+  <p class="font-weight: bold;">
+  	<h1 style="display: inline-block;">sign up</h1>
+	<a style="display: inline-block; float: right;" class="nav-link" href="myblog.html">Home</a>
+</p>
+ </div>
+
+<div class="jumbotron">
+<form  class="form-inline my-2 my-lg-0" id="Form">
+  <div class="form-group"  style = "width : 300px ; padding-left : 30px; padding : 10px; width: 100%;">
+     <input class="form-control mr-sm-2" type="text" placeholder="NAME" aria-label="NAME" id="name" required>
+    </div>
+<br>
+<div class="btn-group" data-toggle="buttons" style = "width : 300px ; padding-left : 30px; padding : 10px; width: 100%;">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> 1학년
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> 2학년
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> 3학년
+  </label>
+</div>
+
+  <div class="form-row align-items-center"  style = "padding-left : 30px; padding : 10px; width: 100%;">
+    <div class="col-auto">
+      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" >
+        <option value="1" selected>1반</option>
+        <option value="2">2반</option>
+        <option value="3">3반</option>
+        <option value="4">4반</option>
+        <option value="5">5반</option>
+        <option value="6">6반</option>
+      </select>
+    </div>
+  </div>
+  
+<br><br>
+  <div class="form-row align-items-center"  style = "padding-left : 15px;">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">가입</button>
+    </div>
+    </form>
+
+ <div class="modal" id = "myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Result</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+	<script src="../js/hoewon.js"></script>
+
+</body>
+</html>
