@@ -1,4 +1,4 @@
-package org.dimigo.survlet;
+package org.dimigo.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class HelloSurvlet
  */
 @WebServlet("/HelloSurvlet")
-public class HelloSurvlet extends HttpServlet {
+public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HelloSurvlet() {
+    public HelloServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

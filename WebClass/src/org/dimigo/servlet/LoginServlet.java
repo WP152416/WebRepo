@@ -1,14 +1,17 @@
-package org.dimigo.survlet;
+package org.dimigo.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.dimigo.vo.UserVO;
 import org.json.simple.JSONObject;
 
 import com.google.gson.Gson;
@@ -19,13 +22,13 @@ import com.google.gson.JsonObject;
  * Servlet implementation class LoginSurvlet
  */
 @WebServlet("/login")
-public class LoginSurvlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginSurvlet() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,8 +37,8 @@ public class LoginSurvlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		RequestDispatcher rd = request.getRequestDispatcher("jsp/login.jsp");
+		rd.forward(request, response);
 	}
 
 	/**
@@ -48,6 +51,34 @@ public class LoginSurvlet extends HttpServlet {
 		String pw = request.getParameter("pw");
 		System.out.printf("id : %s, pw : %s",id,pw);
 		
+		response.setContentType("text/html; charset = utf-8");
+		
+		//id, pw 정합성 체크
+		boolean result = true;
+		
+		if(result){
+			//세션에 사용자 정보 생성
+			HttpSession session = request.getSession();
+			UserVO user = new UserVO();
+			user.setId(id);
+			user.setName("홍길동");
+			user.setNickname("의적");
+			
+			session.setAttribute("user", user);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("jsp/login.jsp");
+			rd.forward(request, response);
+			
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	protected void doPost2(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		System.out.printf("id : %s, pw : %s",id,pw);
+			
 		response.setContentType("application/json; charset = utf-8");
 		PrintWriter out = response.getWriter();
 		
