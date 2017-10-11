@@ -20,6 +20,14 @@ public class UserVO {
 	private String id;
 	private String name;
 	private String nickname;
+	private String pwd;
+	
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
 
 	public String getId() {
 		return id;

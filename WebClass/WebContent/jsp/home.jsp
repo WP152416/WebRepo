@@ -43,7 +43,7 @@ function menu_out(e) {
     %>	
     	<a class="text-bold text-white" style="text-decoration: none" href="/WebClass/login">Sign in</a>
     	<span class="text-bold text-white">&nbsp; or &nbsp;</span>
-    	<a class="text-bold text-white" style="text-decoration: none" href="">Sign up</a>
+    	<a class="text-bold text-white" style="text-decoration: none" href="/WebClass/signup">Sign up</a>
     <% } else{ %>
     <%-- 세션이 있는 경우 --%>
 	    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
@@ -52,7 +52,9 @@ function menu_out(e) {
 	    	<%= user.getName() + "님" %>
 	      </a>
 	      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+	      	<form action = "/WebClass/logout" method = "post">
 	      	<button type="submit" class="dropdown-item">Sign out</button>
+	      	</form>
 	       	<div class="dropdown-divider"></div>
 	        <button type="button" class="dropdown-item">Action1</button>
 	        <button type="button" class="dropdown-item">Action2</button>
