@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import = "org.dimigo.vo.UserVO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +13,16 @@
 <body>
 <div class="container">
 
-  <form class="form-signin" action="/WebClass/login" method="post">
+	<%UserVO user = (UserVO)session.getAttribute("user"); %>
+	
+  <form class="form-signin" action="/WebClass/bloglogin" method="post">
     <h2 class="form-signin-heading">Please sign in</h2>
     
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" required autofocus <%if(user != null) {%> value="<%=user.getId() %>" <%} %>>
     
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
+    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required <%if(user!=null) {%> value="<%=user.getPwd()%>"<%} %>>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
