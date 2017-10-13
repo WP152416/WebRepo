@@ -56,7 +56,7 @@
     <% } else{ %>
     <%-- 세션이 있는 경우 --%>
 	    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-	    <li class="nav-item dropdown">
+	    <li class="nav-item dropdown"> 
 	      <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	    	이부경님
 	      </a>
